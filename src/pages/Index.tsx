@@ -71,7 +71,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-red-100">
       <Header 
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}

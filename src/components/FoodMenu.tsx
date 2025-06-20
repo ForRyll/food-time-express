@@ -27,67 +27,86 @@ const FoodMenu = ({ addToCart }: FoodMenuProps) => {
   const foodItems: FoodItem[] = [
     {
       id: 1,
-      name: "Nasi Gudeg Jogja",
-      description: "Gudeg tradisional dengan ayam dan telur, disajikan dengan nasi hangat",
-      price: 25000,
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      category: "traditional",
-      rating: 4.8,
+      name: "Mie Ayam Original",
+      description: "Mie ayam khas Gacoan dengan topping ayam suwir, pangsit goreng, dan kuah kaldu gurih",
+      price: 15000,
+      image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=300&fit=crop",
+      category: "mie",
+      rating: 4.9,
       isPopular: true
     },
     {
       id: 2,
-      name: "Ayam Geprek Sambal Matah",
-      description: "Ayam crispy dengan sambal matah pedas yang menggugah selera",
-      price: 20000,
-      image: "https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=400&h=300&fit=crop",
-      category: "chicken",
-      rating: 4.7,
+      name: "Mie Ayam Cabe Ijo",
+      description: "Mie ayam dengan sambal cabe ijo yang pedas menggigit, cocok untuk pecinta pedas",
+      price: 17000,
+      image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop",
+      category: "mie",
+      rating: 4.8,
       isPopular: true
     },
     {
       id: 3,
-      name: "Burger Beef Deluxe",
-      description: "Burger daging sapi dengan keju, lettuce, dan saus spesial",
-      price: 35000,
-      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop",
-      category: "western",
-      rating: 4.6
+      name: "Bakso Urat Original",
+      description: "Bakso urat kenyal dengan kuah kaldu segar, dilengkapi tahu dan bihun",
+      price: 18000,
+      image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop",
+      category: "bakso",
+      rating: 4.7
     },
     {
       id: 4,
-      name: "Pasta Carbonara",
-      description: "Pasta dengan saus creamy carbonara dan bacon crispy",
-      price: 40000,
-      image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=400&h=300&fit=crop",
-      category: "western",
-      rating: 4.5
+      name: "Bakso Mercon",
+      description: "Bakso dengan level kepedasan tinggi, tantangan untuk pecinta makanan pedas",
+      price: 20000,
+      image: "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=400&h=300&fit=crop",
+      category: "bakso",
+      rating: 4.6
     },
     {
       id: 5,
-      name: "Soto Ayam Lamongan",
-      description: "Soto ayam khas Lamongan dengan kuah bening yang segar",
-      price: 18000,
-      image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop",
-      category: "traditional",
-      rating: 4.9
+      name: "Dimsum Ayam (4 pcs)",
+      description: "Dimsum ayam lembut dengan kulit tipis, disajikan dengan saus sambal khas Gacoan",
+      price: 12000,
+      image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop",
+      category: "dimsum",
+      rating: 4.5
     },
     {
       id: 6,
-      name: "Pizza Margherita",
-      description: "Pizza klasik dengan mozarella, basil, dan tomat segar",
-      price: 45000,
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      category: "western",
+      name: "Dimsum Udang (4 pcs)",
+      description: "Dimsum udang segar dengan tekstur kenyal, cocok untuk camilan atau makanan utama",
+      price: 15000,
+      image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=300&fit=crop",
+      category: "dimsum",
       rating: 4.4
+    },
+    {
+      id: 7,
+      name: "Es Teh Manis",
+      description: "Es teh manis segar untuk menemani makanan pedas Gacoan",
+      price: 5000,
+      image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop",
+      category: "minuman",
+      rating: 4.3
+    },
+    {
+      id: 8,
+      name: "Es Jeruk",
+      description: "Es jeruk segar asam manis yang menyegarkan",
+      price: 8000,
+      image: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=400&h=300&fit=crop",
+      category: "minuman",
+      rating: 4.2
     }
   ];
 
   const categories = [
     { id: "all", name: "Semua Menu" },
-    { id: "traditional", name: "Makanan Tradisional" },
-    { id: "chicken", name: "Ayam" },
-    { id: "western", name: "Western Food" }
+    { id: "mie", name: "Mie Ayam" },
+    { id: "bakso", name: "Bakso" },
+    { id: "dimsum", name: "Dimsum" },
+    { id: "minuman", name: "Minuman" }
   ];
 
   const filteredItems = selectedCategory === "all" 
@@ -100,14 +119,14 @@ const FoodMenu = ({ addToCart }: FoodMenuProps) => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-            Menu Makanan
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-red-600">
+            Menu Gacoan
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Pilih dari berbagai macam makanan lezat yang telah disiapkan dengan bahan-bahan segar dan berkualitas
+            Pilih dari berbagai menu andalan Gacoan yang sudah terbukti kelezatannya dan bikin nagih
           </p>
         </div>
 
@@ -119,8 +138,8 @@ const FoodMenu = ({ addToCart }: FoodMenuProps) => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full transition-all ${
                 selectedCategory === category.id
-                  ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-red-600 text-white shadow-lg"
+                  : "bg-white text-gray-600 hover:bg-red-50 border border-gray-200"
               }`}
             >
               {category.name}
@@ -129,7 +148,7 @@ const FoodMenu = ({ addToCart }: FoodMenuProps) => {
         </div>
 
         {/* Food Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredItems.map((item) => (
             <Card key={item.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="relative">
@@ -140,7 +159,7 @@ const FoodMenu = ({ addToCart }: FoodMenuProps) => {
                 />
                 {item.isPopular && (
                   <Badge className="absolute top-3 left-3 bg-red-500">
-                    Popular
+                    Favorit
                   </Badge>
                 )}
                 <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
@@ -157,13 +176,13 @@ const FoodMenu = ({ addToCart }: FoodMenuProps) => {
               </CardHeader>
               
               <CardFooter className="flex items-center justify-between">
-                <div className="text-xl font-bold text-orange-500">
+                <div className="text-xl font-bold text-red-600">
                   Rp {item.price.toLocaleString('id-ID')}
                 </div>
                 <Button 
                   onClick={() => handleAddToCart(item)}
                   size="sm"
-                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                  className="bg-red-600 hover:bg-red-700 text-white"
                 >
                   <Plus className="h-4 w-4 mr-1" />
                   Tambah

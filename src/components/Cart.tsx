@@ -28,7 +28,7 @@ const Cart = ({ items, removeFromCart, updateQuantity }: CartProps) => {
       toast.error("Keranjang masih kosong!");
       return;
     }
-    toast.success("Pesanan berhasil dibuat! Silakan tunggu konfirmasi.");
+    toast.success("Pesanan Gacoan berhasil dibuat! Silakan tunggu konfirmasi.");
   };
 
   if (items.length === 0) {
@@ -37,9 +37,9 @@ const Cart = ({ items, removeFromCart, updateQuantity }: CartProps) => {
         <div className="max-w-2xl mx-auto text-center">
           <ShoppingBag className="h-24 w-24 text-gray-300 mx-auto mb-6" />
           <h2 className="text-2xl font-bold text-gray-600 mb-4">Keranjang Kosong</h2>
-          <p className="text-gray-500 mb-8">Belum ada makanan di keranjang Anda. Yuk mulai pesan!</p>
-          <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-            Lihat Menu
+          <p className="text-gray-500 mb-8">Belum ada menu Gacoan di keranjang Anda. Yuk pilih menu favorit!</p>
+          <Button className="bg-red-600 hover:bg-red-700 text-white">
+            Lihat Menu Gacoan
           </Button>
         </div>
       </div>
@@ -49,8 +49,8 @@ const Cart = ({ items, removeFromCart, updateQuantity }: CartProps) => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl md:text-3xl font-bold mb-8 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-          Keranjang Belanja
+        <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-600">
+          Keranjang Gacoan
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -68,7 +68,7 @@ const Cart = ({ items, removeFromCart, updateQuantity }: CartProps) => {
                     
                     <div className="flex-1">
                       <h3 className="font-semibold text-gray-800">{item.name}</h3>
-                      <p className="text-orange-500 font-bold">
+                      <p className="text-red-600 font-bold">
                         Rp {item.price.toLocaleString('id-ID')}
                       </p>
                     </div>
@@ -150,7 +150,7 @@ const Cart = ({ items, removeFromCart, updateQuantity }: CartProps) => {
                 <div className="border-t pt-4">
                   <div className="flex justify-between font-bold text-lg">
                     <span>Total</span>
-                    <span className="text-orange-500">
+                    <span className="text-red-600">
                       Rp {finalTotal.toLocaleString('id-ID')}
                     </span>
                   </div>
@@ -158,9 +158,9 @@ const Cart = ({ items, removeFromCart, updateQuantity }: CartProps) => {
 
                 <Button 
                   onClick={handleCheckout}
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3"
                 >
-                  Checkout Sekarang
+                  Pesan Gacoan Sekarang
                 </Button>
               </CardContent>
             </Card>
